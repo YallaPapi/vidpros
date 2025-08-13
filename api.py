@@ -362,9 +362,10 @@ def index():
     """
     return jsonify({
         'service': 'VideoReach AI API',
-        'version': '1.0.0',
+        'version': '2.0.0',
         'endpoints': {
-            'POST /api/generate-video': 'Generate AI avatar video',
+            'POST /api/generate-video': 'Generate AI avatar or faceless video',
+            'GET /api/video-modes': 'Get video mode comparison',
             'GET /health': 'Health check',
             'GET /status': 'Service status and availability'
         },

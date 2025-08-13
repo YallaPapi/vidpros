@@ -13,6 +13,11 @@ import subprocess
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 from pathlib import Path
+
+# Fix matplotlib backend for threading issues
+import matplotlib
+matplotlib.use('Agg')  # Use non-GUI backend
+
 import requests
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
@@ -291,16 +296,44 @@ class ElevenLabsVoiceGenerator:
             return self._fallback_tts(text)
     
     def _fallback_tts(self, text: str) -> str:
-        """Fallback to system TTS if ElevenLabs fails"""
-        import pyttsx3
-        
-        engine = pyttsx3.init()
+        """Fallback to better TTS if ElevenLabs fails"""
         output_path = tempfile.mktemp(suffix='.mp3')
-        engine.save_to_file(text, output_path)
-        engine.runAndWait()
         
-        logger.info(f"Fallback TTS generated: {output_path}")
-        return output_path
+        # Try edge-tts first (much better quality)
+        try:
+            import edge_tts
+            import asyncio
+            
+            async def generate_edge_tts():
+                voice = "en-US-AriaNeural"  # Natural female voice
+                communicate = edge_tts.Communicate(text, voice)
+                await communicate.save(output_path)
+            
+            # Check if we're already in an event loop
+            try:
+                loop = asyncio.get_running_loop()
+                # If we're in a loop, create new thread for sync operation
+                import concurrent.futures
+                with concurrent.futures.ThreadPoolExecutor() as executor:
+                    future = executor.submit(asyncio.run, generate_edge_tts())
+                    future.result()
+            except RuntimeError:
+                # No loop running, we can use asyncio.run
+                asyncio.run(generate_edge_tts())
+            
+            logger.info(f"Natural voice generated with edge-tts: {output_path}")
+            return output_path
+            
+        except ImportError:
+            # Fall back to pyttsx3 if edge-tts not available
+            import pyttsx3
+            
+            engine = pyttsx3.init()
+            engine.save_to_file(text, output_path)
+            engine.runAndWait()
+            
+            logger.info(f"Fallback TTS generated: {output_path}")
+            return output_path
 
 
 class FFmpegVideoAssembler:
