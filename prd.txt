@@ -1,0 +1,870 @@
+# Product Requirements Document
+## AI-Powered Video Prospecting Platform
+
+### 1. Executive Summary
+
+**Product Name:** VideoReach AI  
+**Version:** 1.0 (MVP)  
+**Date:** August 2025  
+**Status:** Concept/Planning Phase
+
+**Overview:**  
+An automated platform that generates personalized prospecting videos at scale using AI avatars, prospect research, and intelligent script generation. The system captures prospect websites, analyzes their business, generates contextual scripts, creates AI avatar videos discussing specific opportunities, and distributes them through multiple channels.
+
+### 2. Product Objectives
+
+**Primary Goals:**
+- Generate 100+ personalized prospecting videos per day
+- Achieve 8-10x higher response rates than text-only outreach
+- Reduce video creation time from 15 minutes to 30 seconds per prospect
+- Integrate seamlessly with existing cold email infrastructure
+
+**Success Metrics:**
+- Video completion rate > 60%
+- Response rate > 15%
+- Meeting booking rate > 5%
+- Cost per video < $0.50
+- Video generation time < 45 seconds
+
+### 3. User Stories
+
+**As a sales team member, I want to:**
+1. Upload a CSV of prospects with their company URLs and LinkedIn profiles
+2. Select or customize video templates for different ICPs
+3. Choose my AI avatar or upload my own avatar training data
+4. Review and approve generated scripts before video creation
+5. Automatically send videos through email, LinkedIn, or SMS
+6. Track video engagement (views, watch time, clicks)
+7. Get notified when prospects engage with videos
+8. A/B test different video scripts and styles
+
+### 4. Functional Requirements
+
+#### 4.1 Prospect Research Engine
+- **Data Sources:**
+  - Website scraping and analysis
+  - LinkedIn profile enrichment
+  - Company information (size, industry, tech stack)
+  - Recent news and triggers
+  - Social media presence
+- **Analysis Output:**
+  - Company pain points
+  - Automation opportunities
+  - Industry-specific challenges
+  - Personalization hooks
+  - Decision maker insights
+
+#### 4.2 Script Generation System
+- **AI Script Writer:**
+  - GPT-4 integration for script creation
+  - Industry-specific templates
+  - Personalization variables:
+    - `{{company_name}}`
+    - `{{prospect_name}}`
+    - `{{industry}}`
+    - `{{specific_pain_point}}`
+    - `{{automation_opportunity}}`
+    - `{{roi_estimate}}`
+  - Multiple script variations for A/B testing
+- **Script Components:**
+  - Hook (0-5 seconds): Mention company/specific detail
+  - Problem (5-15 seconds): Identify their challenge
+  - Solution (15-35 seconds): Present automation opportunity
+  - CTA (35-45 seconds): Clear next step
+- **Script Approval Workflow:**
+  - Bulk review interface
+  - Edit capabilities
+  - Approval queue
+  - Template learning from edits
+
+#### 4.3 Video Generation Pipeline
+- **AI Avatar Integration:**
+  - HeyGen API for photorealistic avatars
+  - D-ID API as backup/alternative
+  - Synthesia for enterprise tier
+  - Custom avatar training option
+- **Screen Recording:**
+  - Automated browser automation (Puppeteer/Playwright)
+  - Capture prospect's website
+  - Highlight specific areas while discussing
+  - Smooth scrolling and mouse movements
+- **Video Assembly:**
+  - Picture-in-picture avatar overlay
+  - Branded intro/outro
+  - Captions/subtitles auto-generated
+  - Background music (optional)
+  - Resolution: 1080p standard, 720p option
+
+#### 4.4 Distribution System
+- **Email Integration:**
+  - Direct SMTP sending
+  - Integration with 300+ existing mailboxes
+  - Video thumbnail with play button
+  - Fallback GIF preview
+  - Tracking pixel embedded
+- **LinkedIn Automation:**
+  - Connection request with video link
+  - InMail video messages
+  - Message sequences after video view
+  - LinkedIn Sales Navigator integration
+- **SMS/WhatsApp:**
+  - Twilio integration
+  - Video link with preview
+  - Short personalized message
+  - Click tracking
+- **Landing Pages:**
+  - Personalized landing page per video
+  - Custom domain support
+  - Calendar embed (Calendly/Cal.com)
+  - Additional resources/case studies
+
+#### 4.5 Analytics & Tracking
+- **Video Metrics:**
+  - View count and unique views
+  - Watch time and completion rate
+  - Engagement heatmap
+  - Drop-off points
+  - Device and location data
+- **Conversion Tracking:**
+  - CTA clicks
+  - Calendar bookings
+  - Reply tracking
+  - Pipeline attribution
+- **A/B Testing:**
+  - Script variations
+  - Avatar selection
+  - Video length
+  - CTA types
+  - Send times
+
+#### 4.6 CRM Integration
+- **Supported CRMs:**
+  - HubSpot
+  - Salesforce
+  - Pipedrive
+  - Close.io
+  - Webhook support for others
+- **Data Sync:**
+  - Automatic contact creation
+  - Activity logging
+  - Engagement scoring
+  - Pipeline stage updates
+
+### 5. Technical Architecture
+
+#### 5.1 System Components
+```
+┌─────────────────────────────────────────────────┐
+│                 Web Dashboard                    │
+│         (Next.js + TailwindCSS + React)         │
+└─────────────────────┬───────────────────────────┘
+                      │
+┌─────────────────────▼───────────────────────────┐
+│                  API Gateway                     │
+│              (Node.js + Express)                │
+└─────────────────────┬───────────────────────────┘
+                      │
+        ┌─────────────┼─────────────┬─────────────┐
+        │             │             │             │
+┌───────▼──────┐ ┌───▼────┐ ┌─────▼──────┐ ┌────▼─────┐
+│   Research   │ │ Script  │ │   Video    │ │Analytics │
+│   Service    │ │   Gen   │ │   Engine   │ │ Service  │
+│ (Python/BS4) │ │(GPT-4)  │ │(FFmpeg)    │ │(ClickHse)│
+└──────────────┘ └─────────┘ └────────────┘ └──────────┘
+        │             │             │             │
+┌───────▼─────────────▼─────────────▼─────────────▼──────┐
+│                    PostgreSQL Database                  │
+│                      Redis Queue                        │
+│                      S3/CloudFront                      │
+└─────────────────────────────────────────────────────────┘
+```
+
+#### 5.2 Tech Stack
+- **Frontend:** Next.js 14, TypeScript, TailwindCSS, Shadcn/ui
+- **Backend:** Node.js, Express, Bull Queue
+- **Database:** PostgreSQL, Redis, S3
+- **AI Services:** OpenAI GPT-4, HeyGen, D-ID, ElevenLabs
+- **Infrastructure:** AWS/GCP, Docker, Kubernetes
+- **Monitoring:** Datadog, Sentry, MixPanel
+
+#### 5.3 API Integrations
+```javascript
+// Core API dependencies
+{
+  "research": {
+    "scraperapi": "Website content",
+    "apify": "LinkedIn data",
+    "clearbit": "Company enrichment",
+    "builtwith": "Tech stack detection"
+  },
+  "ai_services": {
+    "openai": "Script generation",
+    "heygen": "Avatar videos",
+    "d-id": "Backup avatar",
+    "elevenlabs": "Voice cloning"
+  },
+  "distribution": {
+    "sendgrid": "Email sending",
+    "twilio": "SMS/WhatsApp",
+    "linkedin": "Sales Navigator API"
+  }
+}
+```
+
+### 6. Video Generation Workflow
+
+```mermaid
+graph TD
+    A[CSV Upload] --> B[Prospect Research]
+    B --> C[Script Generation]
+    C --> D[Human Review/Edit]
+    D --> E[Website Screenshot]
+    E --> F[Avatar Recording]
+    F --> G[Video Assembly]
+    G --> H[Quality Check]
+    H --> I[Distribution]
+    I --> J[Analytics Tracking]
+```
+
+### 7. Pricing Model Considerations
+
+**Usage Tiers:**
+- Starter: 100 videos/month ($297)
+- Growth: 500 videos/month ($997)
+- Scale: 2000 videos/month ($2997)
+- Enterprise: Unlimited + custom avatars
+
+**Cost Structure:**
+- Avatar API: ~$0.15 per video
+- GPT-4: ~$0.02 per script
+- Storage/CDN: ~$0.05 per video
+- Infrastructure: ~$0.08 per video
+- **Total COGS: ~$0.30 per video**
+
+### 8. MVP Scope (8 Weeks)
+
+**Included in v1.0:**
+- Single AI avatar option
+- Website screenshot capture
+- GPT-4 script generation
+- Email distribution only
+- Basic analytics (views, completion)
+- CSV upload for prospects
+- 5 industry templates
+
+**Excluded from v1.0 (Future):**
+- Custom avatar training
+- LinkedIn/SMS distribution  
+- A/B testing framework
+- Advanced analytics
+- CRM integrations
+- Team collaboration features
+- White-label options
+
+### 9. Development Phases
+
+**Phase 1 (Week 1-2):** Infrastructure
+- Setup cloud infrastructure
+- Database schema design
+- Authentication system
+- Basic dashboard UI
+
+**Phase 2 (Week 3-4):** Research Engine
+- Website scraping service
+- Data enrichment pipeline
+- Prospect analysis logic
+- Research data storage
+
+**Phase 3 (Week 5-6):** Video Generation
+- Avatar API integration
+- Script generation with GPT-4
+- Website capture system
+- Video assembly pipeline
+
+**Phase 4 (Week 7-8):** Distribution & Analytics
+- Email sending integration
+- Video hosting/CDN
+- Analytics tracking
+- Dashboard completion
+
+### 10. Success Metrics & KPIs
+
+**Technical Metrics:**
+- Video generation success rate > 95%
+- Average generation time < 45 seconds
+- System uptime > 99.9%
+- API error rate < 1%
+
+**Business Metrics:**
+- Cost per video < $0.50
+- Video-to-meeting rate > 5%
+- Customer acquisition cost < $500
+- Monthly recurring revenue growth > 30%
+
+### 11. Risk Assessment
+
+**Technical Risks:**
+- Avatar API rate limits or downtime
+- Website scraping blocks
+- Video processing bottlenecks
+- Storage costs at scale
+
+**Business Risks:**
+- Privacy/GDPR compliance
+- Spam/authenticity perception
+- Avatar uncanny valley effect
+- Competitive response
+
+**Mitigation Strategies:**
+- Multiple avatar API providers
+- Rotating proxy infrastructure
+- Async processing with queues
+- Progressive enhancement approach
+
+### 12. Competitive Analysis
+
+**Direct Competitors:**
+- Loom: Manual recording, no AI
+- Vidyard: Limited personalization
+- BombBomb: No AI avatars
+- Tavus: Similar but enterprise-focused
+
+**Differentiation:**
+- Fully automated pipeline
+- Deep personalization via research
+- Multiple distribution channels
+- Existing email infrastructure leverage
+
+### 13. Security & Compliance
+
+**Data Protection:**
+- Encryption at rest and in transit
+- PII data minimization
+- GDPR/CCPA compliance
+- SOC 2 Type II (future)
+
+**Content Moderation:**
+- Script approval workflow
+- Prohibited content filters
+- Brand safety controls
+- Audit logging
+
+### 14. User Interface Requirements
+
+**Dashboard Pages:**
+1. **Campaign Creation**
+   - Prospect upload
+   - Template selection
+   - Avatar choice
+   - Distribution settings
+
+2. **Script Review**
+   - Bulk script preview
+   - Edit interface
+   - Approval actions
+   - Template saving
+
+3. **Analytics Dashboard**
+   - Video performance metrics
+   - Engagement funnel
+   - ROI tracking
+   - Export capabilities
+
+4. **Settings**
+   - API configurations
+   - Avatar management
+   - Team members
+   - Billing
+
+### 15. Integration Requirements
+
+**Email Platforms:**
+- SMTP configuration
+- Email warming integration
+- Deliverability monitoring
+- Bounce/reply handling
+
+**Calendar Systems:**
+- Calendly webhook
+- Cal.com integration
+- Google Calendar API
+- Outlook integration
+
+**Payment Processing:**
+- Stripe subscription billing
+- Usage-based overages
+- Invoice generation
+- Dunning management
+
+### 16. Quality Assurance
+
+**Testing Requirements:**
+- Unit tests > 80% coverage
+- Integration testing for APIs
+- Load testing (1000 concurrent videos)
+- Video quality validation
+- Cross-browser compatibility
+
+**Performance Benchmarks:**
+- Page load < 2 seconds
+- Video generation < 45 seconds
+- API response < 200ms
+- 99.9% uptime SLA
+
+# PRD Addition: AI Automation Audit Report Feature
+
+## 4.7 AI Automation Audit Report System
+
+### Overview
+An intelligent report generation system that creates personalized automation assessment reports for each prospect, similar to post-discovery call analysis but using publicly available data. The system employs multiple AI agents to analyze the prospect's business and generate a comprehensive automation roadmap that serves as the core content for the video walkthrough.
+
+### 4.7.1 Multi-Agent Analysis Pipeline
+
+**Agent Chain Architecture:**
+```javascript
+const auditAgentChain = {
+  agents: [
+    {
+      name: "IndustryBaselineAgent",
+      model: "gpt-4",
+      role: "Establish industry standards and common pain points",
+      inputs: ["industry", "company_size", "business_model", "geography"],
+      outputs: ["industry_benchmarks", "common_pain_points", "typical_tech_stack", "automation_maturity_baseline"],
+      confidence_threshold: 0.7
+    },
+    {
+      name: "CurrentStateAnalyzer",
+      model: "gpt-4",
+      role: "Infer current business processes from available signals",
+      inputs: ["website_analysis", "tech_stack", "job_postings", "team_structure", "social_presence"],
+      outputs: ["detected_processes", "tool_usage", "operational_maturity", "growth_signals"],
+      confidence_threshold: 0.65
+    },
+    {
+      name: "InefficiencyDetector",
+      model: "gpt-4",
+      role: "Identify manual processes and automation gaps",
+      inputs: ["detected_processes", "industry_benchmarks", "missing_tools", "customer_complaints"],
+      outputs: ["manual_processes", "automation_gaps", "efficiency_bottlenecks", "integration_opportunities"],
+      confidence_threshold: 0.75
+    },
+    {
+      name: "SolutionArchitect",
+      model: "gpt-4",
+      role: "Map specific automation solutions to identified gaps",
+      inputs: ["automation_gaps", "company_context", "budget_indicators", "technical_readiness"],
+      outputs: ["recommended_automations", "implementation_sequence", "dependency_map", "risk_factors"],
+      confidence_threshold: 0.7
+    },
+    {
+      name: "ROICalculator",
+      model: "gpt-4",
+      role: "Estimate time and cost savings from automations",
+      inputs: ["recommended_automations", "company_size", "industry_wage_data", "current_efficiency"],
+      outputs: ["time_savings_range", "cost_savings_range", "payback_period", "5_year_npv"],
+      confidence_threshold: 0.6
+    },
+    {
+      name: "ReportCompiler",
+      model: "gpt-4",
+      role: "Synthesize all agent outputs into coherent report",
+      inputs: ["all_agent_outputs", "confidence_scores", "supporting_evidence"],
+      outputs: ["executive_summary", "detailed_findings", "implementation_roadmap", "next_steps"],
+      confidence_threshold: 0.8
+    }
+  ]
+};
+```
+
+### 4.7.2 Data Enrichment Sources
+
+**Primary Data Collection:**
+```javascript
+const dataEnrichmentSources = {
+  website_analysis: {
+    provider: "Puppeteer + GPT-4 Vision",
+    data_points: [
+      "forms_complexity",
+      "chat_widget_presence",
+      "booking_system",
+      "customer_portal",
+      "api_documentation",
+      "integration_mentions"
+    ]
+  },
+  
+  tech_stack_detection: {
+    provider: "BuiltWith API + Wappalyzer",
+    data_points: [
+      "crm_system",
+      "marketing_automation",
+      "customer_support_tools",
+      "analytics_platforms",
+      "payment_processors",
+      "development_frameworks"
+    ]
+  },
+  
+  job_posting_analysis: {
+    providers: ["Indeed API", "LinkedIn Jobs", "Company Careers Page"],
+    signals: {
+      "data_entry": "manual_process_indicator",
+      "customer_service_reps": "scale_challenge",
+      "operations_coordinator": "workflow_inefficiency",
+      "multiple_same_role": "growth_bottleneck"
+    }
+  },
+  
+  social_review_mining: {
+    providers: ["Google Reviews", "G2", "Trustpilot", "Twitter"],
+    sentiment_analysis: true,
+    complaint_categories: [
+      "response_time",
+      "booking_difficulty",
+      "communication_gaps",
+      "service_inconsistency"
+    ]
+  },
+  
+  competitive_intelligence: {
+    providers: ["SimilarWeb", "SEMRush API"],
+    metrics: [
+      "traffic_growth",
+      "engagement_metrics",
+      "technology_adoption",
+      "market_position"
+    ]
+  }
+};
+```
+
+### 4.7.3 Report Generation Engine
+
+**Report Structure:**
+```typescript
+interface AutomationAuditReport {
+  metadata: {
+    reportId: string;
+    generatedAt: Date;
+    prospectId: string;
+    confidenceScore: number;
+    dataSourcesUsed: string[];
+  };
+  
+  executiveSummary: {
+    headline: string;  // "5 automations that could save [Company] $180K/year"
+    keyFindings: string[];
+    totalSavingsRange: { min: number; max: number };
+    implementationTimeline: string;
+    investmentRequired: { min: number; max: number };
+  };
+  
+  currentStateAnalysis: {
+    observedIndicators: Array<{
+      indicator: string;
+      source: string;
+      confidence: number;
+      implication: string;
+    }>;
+    industryComparison: {
+      metric: string;
+      companyEstimate: number;
+      industryAverage: number;
+      percentile: number;
+    }[];
+    maturityScore: number;  // 1-5 scale
+  };
+  
+  automationOpportunities: Array<{
+    priority: number;
+    title: string;
+    currentState: string;
+    proposedState: string;
+    affectedMetrics: string[];
+    estimatedSavings: {
+      hoursPerWeek: { min: number; max: number };
+      annualCost: { min: number; max: number };
+    };
+    implementationEffort: 'low' | 'medium' | 'high';
+    timeToImplement: string;
+    confidence: number;
+  }>;
+  
+  implementationRoadmap: {
+    phases: Array<{
+      phase: number;
+      title: string;
+      duration: string;
+      initiatives: string[];
+      expectedOutcomes: string[];
+      investment: { min: number; max: number };
+    }>;
+    quickWins: string[];  // Implementations under 1 week
+    dependencies: Map<string, string[]>;
+  };
+  
+  roiProjection: {
+    paybackPeriod: { min: number; max: number };  // months
+    yearOneROI: number;  // percentage
+    fiveYearNPV: { min: number; max: number };
+    breakEvenPoint: string;
+    assumptions: string[];
+  };
+  
+  nextSteps: {
+    immediatActions: string[];
+    callToAction: string;
+    validationNeeded: string[];  // What to confirm on call
+  };
+}
+```
+
+**Report Template Engine:**
+```javascript
+const reportTemplates = {
+  ecommerce: {
+    focus_areas: ["cart_abandonment", "customer_service", "inventory_management", "email_marketing"],
+    industry_benchmarks: { /* specific metrics */ },
+    common_automations: ["abandoned_cart_recovery", "review_collection", "inventory_alerts"]
+  },
+  
+  saas_b2b: {
+    focus_areas: ["lead_qualification", "onboarding", "usage_tracking", "renewal_management"],
+    industry_benchmarks: { /* specific metrics */ },
+    common_automations: ["trial_nurture", "usage_alerts", "expansion_triggers"]
+  },
+  
+  professional_services: {
+    focus_areas: ["appointment_scheduling", "proposal_generation", "invoice_processing", "client_communication"],
+    industry_benchmarks: { /* specific metrics */ },
+    common_automations: ["booking_automation", "document_generation", "payment_reminders"]
+  },
+  
+  healthcare: {
+    focus_areas: ["patient_scheduling", "reminder_systems", "intake_forms", "follow_up_care"],
+    industry_benchmarks: { /* specific metrics */ },
+    common_automations: ["appointment_reminders", "digital_intake", "care_coordination"]
+  }
+};
+```
+
+### 4.7.4 Confidence Scoring System
+
+**Inference Confidence Model:**
+```javascript
+const confidenceScoring = {
+  high_confidence: {
+    threshold: 0.8,
+    indicators: [
+      "explicit_job_posting",
+      "missing_obvious_tool",
+      "direct_complaint_evidence",
+      "competitor_has_automation"
+    ],
+    language: "Our analysis shows...",
+  },
+  
+  medium_confidence: {
+    threshold: 0.6,
+    indicators: [
+      "industry_pattern_match",
+      "indirect_signals",
+      "partial_evidence",
+      "size_based_assumption"
+    ],
+    language: "Based on similar companies...",
+  },
+  
+  low_confidence: {
+    threshold: 0.4,
+    indicators: [
+      "pure_industry_average",
+      "limited_data_available",
+      "assumption_based"
+    ],
+    language: "Industry data suggests...",
+  },
+  
+  confidence_adjustments: {
+    multiple_sources_agree: +0.15,
+    contradictory_evidence: -0.20,
+    recent_data: +0.10,
+    verified_source: +0.15
+  }
+};
+```
+
+### 4.7.5 Report Validation Layer
+
+**Sanity Checks:**
+```javascript
+const reportValidation = {
+  rules: [
+    {
+      name: "realistic_roi",
+      check: (roi) => roi > 0.5 && roi < 10,  // 50% - 1000% ROI
+      failureAction: "adjust_to_industry_average"
+    },
+    {
+      name: "achievable_timeline",
+      check: (weeks) => weeks >= 4 && weeks <= 52,
+      failureAction: "extend_timeline"
+    },
+    {
+      name: "reasonable_savings",
+      check: (savings, revenue) => savings < revenue * 0.15,
+      failureAction: "cap_at_percentage"
+    },
+    {
+      name: "minimum_confidence",
+      check: (confidence) => confidence >= 0.5,
+      failureAction: "add_disclaimer"
+    }
+  ],
+  
+  disclaimers: {
+    low_confidence: "Estimates based on industry averages, to be refined during consultation",
+    limited_data: "Analysis based on publicly available information",
+    assumptions_made: "Assuming current operational patterns based on observed indicators"
+  }
+};
+```
+
+### 4.7.6 Video Script Integration
+
+**Report Walkthrough Video Template:**
+```javascript
+const reportWalkthroughVideo = {
+  scenes: [
+    {
+      duration: "0-5s",
+      visual: "avatar_with_report_cover",
+      script: "Hi {{name}}, I've analyzed {{company}}'s operations and created a custom automation roadmap that could save you {{savings_range}} annually.",
+      action: "display_report_cover"
+    },
+    {
+      duration: "5-15s",
+      visual: "screen_recording_current_state",
+      script: "I noticed you're {{biggest_indicator}} - this usually means {{implication}}.",
+      action: "highlight_evidence_on_website"
+    },
+    {
+      duration: "15-25s",
+      visual: "report_opportunities_section",
+      script: "Your biggest opportunity is {{top_automation}} - similar to what we did for {{similar_company}}, saving them {{case_study_metric}}.",
+      action: "scroll_through_opportunities"
+    },
+    {
+      duration: "25-35s",
+      visual: "roi_projection_chart",
+      script: "With just {{quick_wins}}, you could see ROI in {{payback_period}} weeks.",
+      action: "animate_roi_chart"
+    },
+    {
+      duration: "35-45s",
+      visual: "calendar_booking_page",
+      script: "Let's spend 15 minutes reviewing this together. I'll share the full report and we can adjust these estimates with your actual data.",
+      action: "show_calendar_availability"
+    }
+  ],
+  
+  personalization_rules: [
+    "Always mention specific evidence from their website",
+    "Reference their actual job postings if available",
+    "Compare to known competitors when possible",
+    "Use conservative estimates to maintain credibility"
+  ]
+};
+```
+
+### 4.7.7 Report Delivery Options
+
+**Multi-Format Distribution:**
+```javascript
+const reportDelivery = {
+  formats: {
+    interactive_web: {
+      type: "responsive_html",
+      features: ["embedded_calculators", "hover_explanations", "video_walkthrough", "booking_widget"],
+      hosting: "personalized_subdomain"
+    },
+    pdf_download: {
+      type: "branded_pdf",
+      features: ["executive_summary", "detailed_analysis", "appendix_data"],
+      size_limit: "10MB"
+    },
+    video_overlay: {
+      type: "picture_in_picture",
+      features: ["report_screenshots", "avatar_narration", "highlighted_sections"],
+      duration: "45_seconds"
+    },
+    email_summary: {
+      type: "html_email",
+      features: ["key_findings", "top_3_opportunities", "cta_buttons"],
+      length: "scan_friendly"
+    }
+  },
+  
+  tracking: {
+    report_opened: true,
+    time_spent_reading: true,
+    sections_viewed: true,
+    calculator_interactions: true,
+    video_completion: true,
+    cta_clicks: true
+  }
+};
+```
+
+### 4.7.8 Performance Metrics
+
+**Report Generation KPIs:**
+```javascript
+const reportMetrics = {
+  quality: {
+    accuracy_score: "% of assumptions validated in call",
+    relevance_score: "% of recommendations prospect interested in",
+    confidence_correlation: "actual vs predicted confidence accuracy"
+  },
+  
+  engagement: {
+    report_open_rate: "target: 80%",
+    full_read_rate: "target: 40%",
+    video_completion: "target: 60%",
+    meeting_book_rate: "target: 15%"
+  },
+  
+  efficiency: {
+    generation_time: "target: < 90 seconds",
+    cost_per_report: "target: < $0.75",
+    agent_chain_success_rate: "target: > 95%"
+  }
+};
+```
+
+### 4.7.9 Implementation Requirements
+
+**Additional Infrastructure:**
+- **Agent Orchestration Service**: Manage multi-agent pipeline with parallel processing
+- **Industry Database**: Pre-computed benchmarks and patterns by vertical/size
+- **Report Template Engine**: Dynamic document generation with brand customization
+- **Confidence Scoring Engine**: Weighted scoring across all data points
+- **Cache Layer**: Store industry insights and company research for reuse
+
+**API Additions:**
+- BuiltWith API (tech stack detection)
+- Indeed/LinkedIn APIs (job postings)
+- SimilarWeb API (competitive intelligence)
+- GPT-4 Vision API (website analysis)
+
+**Development Timeline Impact:**
+- Additional 3 weeks for core report generation
+- 1 week for agent chain development
+- 1 week for report template system
+- 1 week for confidence scoring and validation
+- **Total: 6 weeks additional development**
+
+**Cost Impact:**
+- Additional API costs: ~$0.45 per report
+- Total cost per prospect: ~$0.75 (video + report)
+- Maintains healthy margins at $2.99-4.99 price point

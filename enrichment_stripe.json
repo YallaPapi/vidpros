@@ -1,0 +1,49 @@
+{
+  "company_name": "Stripe",
+  "website": "https://www.stripe.com",
+  "industry": "E-commerce",
+  "company_size": "1000+ employees",
+  "tech_stack": [
+    "bootstrap",
+    "react",
+    "salesforce",
+    "stripe",
+    "shopify"
+  ],
+  "founded_year": null,
+  "headquarters": null,
+  "revenue_range": null,
+  "funding_total": null,
+  "funding_stage": null,
+  "employee_growth": null,
+  "key_people": [],
+  "competitors": [],
+  "recent_news": [],
+  "job_postings": [],
+  "tech_spend_estimate": "$10K-$50K/month",
+  "digital_maturity_score": 52,
+  "automation_opportunities": [
+    "Marketing automation platform",
+    "Inventory management automation",
+    "Digital transformation consulting"
+  ],
+  "social_metrics": {},
+  "content_themes": [],
+  "engagement_rate": null,
+  "growth_signals": [],
+  "pain_indicators": [
+    "No cloud infrastructure detected"
+  ],
+  "trigger_events": [],
+  "enrichment_sources": [
+    "LinkedIn",
+    "NewsAPI"
+  ],
+  "confidence_scores": {
+    "company_info": 0.0,
+    "tech_stack": 0.5,
+    "market_intelligence": 0,
+    "overall": 0.16666666666666666
+  },
+  "last_updated": "2025-08-12T21:00:34.603100"
+}

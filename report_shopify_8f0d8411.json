@@ -1,0 +1,862 @@
+{
+  "report_id": "8f0d8411",
+  "generated_at": "2025-08-12T21:07:01.469527",
+  "company_name": "Shopify",
+  "website": "https://www.shopify.com",
+  "enriched_data": {
+    "company_name": "Shopify",
+    "website": "https://www.shopify.com",
+    "industry": "E-commerce",
+    "company_size": "1000+ employees",
+    "tech_stack": [
+      "react",
+      "shopify",
+      "salesforce"
+    ],
+    "founded_year": null,
+    "headquarters": null,
+    "revenue_range": null,
+    "funding_total": null,
+    "funding_stage": null,
+    "employee_growth": null,
+    "key_people": [],
+    "competitors": [],
+    "recent_news": [],
+    "job_postings": [],
+    "tech_spend_estimate": "<$10K/month",
+    "digital_maturity_score": 52,
+    "automation_opportunities": [
+      "Marketing automation platform",
+      "Inventory management automation",
+      "Digital transformation consulting"
+    ],
+    "social_metrics": {},
+    "content_themes": [],
+    "engagement_rate": null,
+    "growth_signals": [],
+    "pain_indicators": [
+      "No cloud infrastructure detected",
+      "Limited technology adoption suggests manual processes"
+    ],
+    "trigger_events": [],
+    "enrichment_sources": [
+      "LinkedIn",
+      "NewsAPI"
+    ],
+    "confidence_scores": {
+      "company_info": 0.0,
+      "tech_stack": 0.3,
+      "market_intelligence": 0,
+      "overall": 0.09999999999999999
+    },
+    "last_updated": "2025-08-12T21:06:57.702499"
+  },
+  "audit_report": {
+    "company_name": "Shopify",
+    "website": "https://www.shopify.com",
+    "generation_date": "2025-08-12T21:07:01.469527",
+    "headline": "5 automation opportunities that could save Shopify $760K annually",
+    "key_findings": [
+      "Current automation maturity: 40%",
+      "Identified 8 automation opportunities",
+      "Average payback period: 4-7 months"
+    ],
+    "total_savings_range": {
+      "min": 409500.0,
+      "max": 760500.0
+    },
+    "implementation_timeline": "6-12 months",
+    "investment_required": {
+      "min": 20000,
+      "max": 100000
+    },
+    "observed_indicators": [
+      {
+        "indicator": "CRM-based sales",
+        "source": "Website analysis",
+        "confidence": 0.8,
+        "implication": "Current maturity: medium"
+      },
+      {
+        "indicator": "Email-only support",
+        "source": "Website analysis",
+        "confidence": 0.8,
+        "implication": "Current maturity: low"
+      },
+      {
+        "indicator": "Manual scheduling",
+        "source": "Website analysis",
+        "confidence": 0.8,
+        "implication": "Current maturity: low"
+      }
+    ],
+    "industry_comparison": [],
+    "maturity_score": 0.39999999999999997,
+    "opportunities": [
+      {
+        "title": "Process Automation for CRM-based sales",
+        "current_state": "CRM-based sales",
+        "proposed_state": "Automated using Custom solution",
+        "affected_metrics": [
+          "Efficiency",
+          "Cost",
+          "Time"
+        ],
+        "estimated_savings": {
+          "hours_per_week": 50.0,
+          "annual_cost": 75000.0
+        },
+        "implementation_effort": "high",
+        "time_to_implement": "8-12 weeks",
+        "confidence": 0.7,
+        "priority": 1
+      },
+      {
+        "title": "Helpdesk System",
+        "current_state": "Email-only support",
+        "proposed_state": "Automated using Zendesk",
+        "affected_metrics": [
+          "Efficiency",
+          "Cost",
+          "Time"
+        ],
+        "estimated_savings": {
+          "hours_per_week": 75.0,
+          "annual_cost": 112500.0
+        },
+        "implementation_effort": "low",
+        "time_to_implement": "2-4 weeks",
+        "confidence": 0.7,
+        "priority": 2
+      },
+      {
+        "title": "Booking Automation",
+        "current_state": "Manual scheduling",
+        "proposed_state": "Automated using Calendly",
+        "affected_metrics": [
+          "Efficiency",
+          "Cost",
+          "Time"
+        ],
+        "estimated_savings": {
+          "hours_per_week": 25.0,
+          "annual_cost": 37500.0
+        },
+        "implementation_effort": "low",
+        "time_to_implement": "1 week",
+        "confidence": 0.7,
+        "priority": 3
+      },
+      {
+        "title": "Recovery Automation",
+        "current_state": "Cart abandonment",
+        "proposed_state": "Automated using Klaviyo",
+        "affected_metrics": [
+          "Efficiency",
+          "Cost",
+          "Time"
+        ],
+        "estimated_savings": {
+          "hours_per_week": 40.0,
+          "annual_cost": 60000.0
+        },
+        "implementation_effort": "medium",
+        "time_to_implement": "2-3 weeks",
+        "confidence": 0.7,
+        "priority": 4
+      },
+      {
+        "title": "Process Automation for Inventory management",
+        "current_state": "Inventory management",
+        "proposed_state": "Automated using Custom solution",
+        "affected_metrics": [
+          "Efficiency",
+          "Cost",
+          "Time"
+        ],
+        "estimated_savings": {
+          "hours_per_week": 50.0,
+          "annual_cost": 75000.0
+        },
+        "implementation_effort": "high",
+        "time_to_implement": "8-12 weeks",
+        "confidence": 0.7,
+        "priority": 5
+      },
+      {
+        "title": "Process Automation for Customer service scale",
+        "current_state": "Customer service scale",
+        "proposed_state": "Automated using Custom solution",
+        "affected_metrics": [
+          "Efficiency",
+          "Cost",
+          "Time"
+        ],
+        "estimated_savings": {
+          "hours_per_week": 50.0,
+          "annual_cost": 75000.0
+        },
+        "implementation_effort": "high",
+        "time_to_implement": "8-12 weeks",
+        "confidence": 0.7,
+        "priority": 6
+      },
+      {
+        "title": "Process Automation for Order fulfillment delays",
+        "current_state": "Order fulfillment delays",
+        "proposed_state": "Automated using Custom solution",
+        "affected_metrics": [
+          "Efficiency",
+          "Cost",
+          "Time"
+        ],
+        "estimated_savings": {
+          "hours_per_week": 50.0,
+          "annual_cost": 75000.0
+        },
+        "implementation_effort": "high",
+        "time_to_implement": "8-12 weeks",
+        "confidence": 0.7,
+        "priority": 7
+      },
+      {
+        "title": "Process Automation for Return processing",
+        "current_state": "Return processing",
+        "proposed_state": "Automated using Custom solution",
+        "affected_metrics": [
+          "Efficiency",
+          "Cost",
+          "Time"
+        ],
+        "estimated_savings": {
+          "hours_per_week": 50.0,
+          "annual_cost": 75000.0
+        },
+        "implementation_effort": "high",
+        "time_to_implement": "8-12 weeks",
+        "confidence": 0.7,
+        "priority": 8
+      }
+    ],
+    "roadmap_phases": [
+      {
+        "phase": 1,
+        "title": "Quick Wins (Month 1-2)",
+        "initiatives": [
+          "Helpdesk System",
+          "Booking Automation",
+          "Recovery Automation",
+          "Process Automation for Inventory management",
+          "Process Automation for Customer service scale",
+          "Process Automation for Order fulfillment delays",
+          "Process Automation for Return processing"
+        ],
+        "expected_outcomes": [
+          "Immediate efficiency gains",
+          "20% time savings"
+        ]
+      },
+      {
+        "phase": 2,
+        "title": "Core Automation (Month 3-6)",
+        "initiatives": [
+          "Process Automation for CRM-based sales"
+        ],
+        "expected_outcomes": [
+          "Process standardization",
+          "40% efficiency improvement"
+        ]
+      }
+    ],
+    "quick_wins": [
+      "Helpdesk System",
+      "Booking Automation"
+    ],
+    "payback_period": {
+      "min": 4,
+      "max": 7
+    },
+    "year_one_roi": 105.08326029798422,
+    "five_year_npv": {
+      "min": 1352652.1820727591,
+      "max": 2512068.3381351246
+    },
+    "assumptions": [
+      "Based on industry averages",
+      "Assumes successful implementation",
+      "Does not include ongoing costs"
+    ],
+    "overall_confidence": 0.73,
+    "data_sources_used": [
+      "Website scraping",
+      "Industry benchmarks",
+      "AI analysis"
+    ],
+    "agent_outputs": [
+      {
+        "agent_name": "IndustryBaselineAgent",
+        "output": {
+          "industry_benchmarks": {
+            "automation_maturity": 0.6,
+            "avg_productivity": 120000
+          },
+          "common_pain_points": [
+            "Cart abandonment",
+            "Inventory management",
+            "Customer service scale",
+            "Order fulfillment delays",
+            "Return processing"
+          ],
+          "typical_tech_stack": [
+            "Shopify",
+            "Stripe",
+            "Mailchimp"
+          ],
+          "automation_baseline": {
+            "expected_automation_level": 0.7,
+            "potential_annual_savings": 50000.0,
+            "implementation_complexity": "high"
+          }
+        },
+        "confidence": 0.75,
+        "reasoning": "Industry patterns for E-commerce with 1000+ employees",
+        "sources": [
+          "Industry benchmarks",
+          "Market research"
+        ],
+        "timestamp": "2025-08-12T21:07:01.468527"
+      },
+      {
+        "agent_name": "CurrentStateAnalyzer",
+        "output": {
+          "detected_processes": [
+            {
+              "process": "CRM-based sales",
+              "maturity": "medium",
+              "tool": "HubSpot/Salesforce"
+            },
+            {
+              "process": "Email-only support",
+              "maturity": "low",
+              "tool": "Basic email"
+            },
+            {
+              "process": "Manual scheduling",
+              "maturity": "low",
+              "tool": "Phone/Email"
+            }
+          ],
+          "tool_usage": [
+            "react",
+            "shopify",
+            "salesforce"
+          ],
+          "operational_maturity": 0.39999999999999997,
+          "growth_signals": [
+            "Active hiring - scaling challenges likely"
+          ]
+        },
+        "confidence": 0.8,
+        "reasoning": "Process detection based on website analysis",
+        "sources": [
+          "Website scraping",
+          "Tech stack detection"
+        ],
+        "timestamp": "2025-08-12T21:07:01.468527"
+      },
+      {
+        "agent_name": "InefficiencyDetector",
+        "output": {
+          "manual_processes": [
+            {
+              "process": "Email-only support",
+              "current_maturity": "low",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Manual scheduling",
+              "current_maturity": "low",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Cart abandonment",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Inventory management",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Customer service scale",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Order fulfillment delays",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Return processing",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            }
+          ],
+          "automation_gaps": [
+            {
+              "process": "CRM-based sales",
+              "current_maturity": "medium",
+              "gap_severity": "medium",
+              "automation_potential": "medium"
+            },
+            {
+              "process": "Email-only support",
+              "current_maturity": "low",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Manual scheduling",
+              "current_maturity": "low",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Cart abandonment",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Inventory management",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Customer service scale",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Order fulfillment delays",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            },
+            {
+              "process": "Return processing",
+              "current_maturity": "missing",
+              "gap_severity": "high",
+              "automation_potential": "high"
+            }
+          ],
+          "efficiency_bottlenecks": [
+            {
+              "area": "Overall automation",
+              "current": 0.39999999999999997,
+              "expected": 0.7,
+              "impact": "high"
+            }
+          ],
+          "integration_opportunities": []
+        },
+        "confidence": 0.75,
+        "reasoning": "Gap analysis between current state and industry baseline",
+        "sources": [
+          "Process analysis",
+          "Industry comparison"
+        ],
+        "timestamp": "2025-08-12T21:07:01.468527"
+      },
+      {
+        "agent_name": "SolutionArchitect",
+        "output": {
+          "recommended_automations": [
+            {
+              "gap": "CRM-based sales",
+              "solution": "Process Automation for CRM-based sales",
+              "recommended_tools": [
+                "Custom solution"
+              ],
+              "implementation_effort": "high",
+              "time_to_implement": "8-12 weeks",
+              "cost_estimate": {
+                "min": 10000,
+                "max": 100000
+              }
+            },
+            {
+              "gap": "Email-only support",
+              "solution": "Helpdesk System",
+              "recommended_tools": [
+                "Zendesk",
+                "Freshdesk",
+                "Intercom"
+              ],
+              "implementation_effort": "low",
+              "time_to_implement": "2-4 weeks",
+              "cost_estimate": {
+                "min": 2000,
+                "max": 10000
+              }
+            },
+            {
+              "gap": "Manual scheduling",
+              "solution": "Booking Automation",
+              "recommended_tools": [
+                "Calendly",
+                "Cal.com",
+                "Acuity"
+              ],
+              "implementation_effort": "low",
+              "time_to_implement": "1 week",
+              "cost_estimate": {
+                "min": 500,
+                "max": 2000
+              }
+            },
+            {
+              "gap": "Cart abandonment",
+              "solution": "Recovery Automation",
+              "recommended_tools": [
+                "Klaviyo",
+                "Mailchimp",
+                "ActiveCampaign"
+              ],
+              "implementation_effort": "medium",
+              "time_to_implement": "2-3 weeks",
+              "cost_estimate": {
+                "min": 1000,
+                "max": 5000
+              }
+            },
+            {
+              "gap": "Inventory management",
+              "solution": "Process Automation for Inventory management",
+              "recommended_tools": [
+                "Custom solution"
+              ],
+              "implementation_effort": "high",
+              "time_to_implement": "8-12 weeks",
+              "cost_estimate": {
+                "min": 10000,
+                "max": 100000
+              }
+            },
+            {
+              "gap": "Customer service scale",
+              "solution": "Process Automation for Customer service scale",
+              "recommended_tools": [
+                "Custom solution"
+              ],
+              "implementation_effort": "high",
+              "time_to_implement": "8-12 weeks",
+              "cost_estimate": {
+                "min": 10000,
+                "max": 100000
+              }
+            },
+            {
+              "gap": "Order fulfillment delays",
+              "solution": "Process Automation for Order fulfillment delays",
+              "recommended_tools": [
+                "Custom solution"
+              ],
+              "implementation_effort": "high",
+              "time_to_implement": "8-12 weeks",
+              "cost_estimate": {
+                "min": 10000,
+                "max": 100000
+              }
+            },
+            {
+              "gap": "Return processing",
+              "solution": "Process Automation for Return processing",
+              "recommended_tools": [
+                "Custom solution"
+              ],
+              "implementation_effort": "high",
+              "time_to_implement": "8-12 weeks",
+              "cost_estimate": {
+                "min": 10000,
+                "max": 100000
+              }
+            }
+          ],
+          "implementation_sequence": [
+            {
+              "automation": "Helpdesk System",
+              "priority": 0.5,
+              "dependencies": []
+            },
+            {
+              "automation": "Booking Automation",
+              "priority": 0.5,
+              "dependencies": []
+            },
+            {
+              "automation": "Recovery Automation",
+              "priority": 1,
+              "dependencies": []
+            },
+            {
+              "automation": "Process Automation for Inventory management",
+              "priority": 1,
+              "dependencies": []
+            },
+            {
+              "automation": "Process Automation for Customer service scale",
+              "priority": 1,
+              "dependencies": []
+            },
+            {
+              "automation": "Process Automation for Order fulfillment delays",
+              "priority": 1,
+              "dependencies": []
+            },
+            {
+              "automation": "Process Automation for Return processing",
+              "priority": 1,
+              "dependencies": []
+            },
+            {
+              "automation": "Process Automation for CRM-based sales",
+              "priority": 2,
+              "dependencies": []
+            }
+          ],
+          "dependency_map": {},
+          "risk_factors": []
+        },
+        "confidence": 0.75,
+        "reasoning": "Solution mapping based on identified gaps",
+        "sources": [
+          "Solution catalog",
+          "Best practices"
+        ],
+        "timestamp": "2025-08-12T21:07:01.468527"
+      },
+      {
+        "agent_name": "ROICalculator",
+        "output": {
+          "time_savings_range": {
+            "min": 14196.0,
+            "max": 26364.0
+          },
+          "cost_savings_range": {
+            "min": 409500.0,
+            "max": 760500.0
+          },
+          "payback_period": {
+            "min": 4,
+            "max": 7
+          },
+          "year_one_roi": 105.08326029798422,
+          "five_year_npv": {
+            "min": 1352652.1820727591,
+            "max": 2512068.3381351246
+          },
+          "savings_breakdown": [
+            {
+              "automation": "Process Automation for CRM-based sales",
+              "hours_saved_per_week": 50.0,
+              "annual_cost_savings": 75000.0,
+              "implementation_cost": 55000.0
+            },
+            {
+              "automation": "Helpdesk System",
+              "hours_saved_per_week": 75.0,
+              "annual_cost_savings": 112500.0,
+              "implementation_cost": 6000.0
+            },
+            {
+              "automation": "Booking Automation",
+              "hours_saved_per_week": 25.0,
+              "annual_cost_savings": 37500.0,
+              "implementation_cost": 1250.0
+            },
+            {
+              "automation": "Recovery Automation",
+              "hours_saved_per_week": 40.0,
+              "annual_cost_savings": 60000.0,
+              "implementation_cost": 3000.0
+            },
+            {
+              "automation": "Process Automation for Inventory management",
+              "hours_saved_per_week": 50.0,
+              "annual_cost_savings": 75000.0,
+              "implementation_cost": 55000.0
+            },
+            {
+              "automation": "Process Automation for Customer service scale",
+              "hours_saved_per_week": 50.0,
+              "annual_cost_savings": 75000.0,
+              "implementation_cost": 55000.0
+            },
+            {
+              "automation": "Process Automation for Order fulfillment delays",
+              "hours_saved_per_week": 50.0,
+              "annual_cost_savings": 75000.0,
+              "implementation_cost": 55000.0
+            },
+            {
+              "automation": "Process Automation for Return processing",
+              "hours_saved_per_week": 50.0,
+              "annual_cost_savings": 75000.0,
+              "implementation_cost": 55000.0
+            }
+          ]
+        },
+        "confidence": 0.6,
+        "reasoning": "ROI calculation based on industry averages",
+        "sources": [
+          "Industry benchmarks",
+          "Salary data"
+        ],
+        "timestamp": "2025-08-12T21:07:01.469527"
+      },
+      {
+        "agent_name": "ReportCompiler",
+        "output": {
+          "executive_summary": {
+            "headline": "5 automation opportunities that could save Shopify $760K annually",
+            "key_findings": [
+              "Current automation maturity: 40%",
+              "Identified 8 automation opportunities",
+              "Average payback period: 4-7 months"
+            ],
+            "total_savings_range": {
+              "min": 409500.0,
+              "max": 760500.0
+            },
+            "implementation_timeline": "6-12 months",
+            "investment_required": {
+              "min": 20000,
+              "max": 100000
+            }
+          },
+          "detailed_findings": {
+            "IndustryBaselineAgent": {
+              "confidence": 0.75,
+              "key_insights": []
+            },
+            "CurrentStateAnalyzer": {
+              "confidence": 0.8,
+              "key_insights": [
+                "Operational maturity: 40.0%"
+              ]
+            },
+            "InefficiencyDetector": {
+              "confidence": 0.75,
+              "key_insights": [
+                "Found 8 automation gaps"
+              ]
+            },
+            "SolutionArchitect": {
+              "confidence": 0.75,
+              "key_insights": [
+                "Recommended 8 automations"
+              ]
+            },
+            "ROICalculator": {
+              "confidence": 0.6,
+              "key_insights": []
+            }
+          },
+          "implementation_roadmap": [
+            {
+              "phase": 1,
+              "title": "Quick Wins (Month 1-2)",
+              "initiatives": [
+                "Helpdesk System",
+                "Booking Automation",
+                "Recovery Automation",
+                "Process Automation for Inventory management",
+                "Process Automation for Customer service scale",
+                "Process Automation for Order fulfillment delays",
+                "Process Automation for Return processing"
+              ],
+              "expected_outcomes": [
+                "Immediate efficiency gains",
+                "20% time savings"
+              ]
+            },
+            {
+              "phase": 2,
+              "title": "Core Automation (Month 3-6)",
+              "initiatives": [
+                "Process Automation for CRM-based sales"
+              ],
+              "expected_outcomes": [
+                "Process standardization",
+                "40% efficiency improvement"
+              ]
+            }
+          ],
+          "next_steps": [
+            "Review and prioritize automation opportunities",
+            "Validate assumptions with actual data",
+            "Create detailed implementation plan",
+            "Allocate budget and resources"
+          ]
+        },
+        "confidence": 0.73,
+        "reasoning": "Synthesis of all agent analyses",
+        "sources": [
+          "All agent outputs"
+        ],
+        "timestamp": "2025-08-12T21:07:01.469527"
+      }
+    ]
+  },
+  "charts": {},
+  "executive_summary": "Shopify is a E-commerce company with 1000+ employees. The company demonstrates moderate digital maturity (52/100). We identified 3 key automation opportunities that could deliver significant operational improvements.",
+  "key_findings": [
+    "Limited technology adoption indicates significant automation potential",
+    "Key operational challenges identified: No cloud infrastructure detected",
+    "Digital maturity below industry average presents competitive risk"
+  ],
+  "critical_recommendations": [
+    "Implement Marketing automation platform",
+    "Implement Inventory management automation",
+    "Implement Digital transformation consulting",
+    "Deploy CRM system for customer relationship management"
+  ],
+  "total_savings_potential": 375000.0,
+  "implementation_cost": 112500.0,
+  "payback_period_months": 3,
+  "implementation_risks": [
+    "Integration complexity with existing systems",
+    "User adoption and training requirements"
+  ],
+  "success_factors": [
+    "Executive sponsorship and clear governance",
+    "Phased implementation approach with quick wins"
+  ],
+  "immediate_actions": [
+    "Schedule stakeholder alignment meeting",
+    "Audit current technology stack and integrations",
+    "Identify automation champions within organization"
+  ],
+  "thirty_day_plan": [
+    "Complete detailed process mapping for top 3 automation opportunities",
+    "Vendor evaluation and proof-of-concept planning",
+    "Develop business case with detailed ROI projections"
+  ],
+  "ninety_day_plan": [
+    "Launch pilot automation project",
+    "Establish automation center of excellence",
+    "Implement measurement framework and KPIs"
+  ]
+}

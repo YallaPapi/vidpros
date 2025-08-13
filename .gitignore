@@ -1,0 +1,90 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# API Keys and Secrets
+config/secrets.py
+*.key
+*.pem
+
+# Logs
+*.log
+logs/
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Media files
+*.mp4
+*.mp3
+*.wav
+videos/
+audio/
+screenshots/
+
+# Reports
+reports/*.pdf
+reports/*.html
+
+# Node modules (if added later)
+node_modules/
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# OS Files
+Thumbs.db
+.DS_Store
+
+# Project specific
+output/
+downloads/
+cache/

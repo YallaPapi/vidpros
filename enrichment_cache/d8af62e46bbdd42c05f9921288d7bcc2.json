@@ -1,0 +1,48 @@
+{
+  "company_name": "Figma",
+  "website": "https://www.figma.com",
+  "industry": "Education",
+  "company_size": "1000+ employees",
+  "tech_stack": [
+    "vue",
+    "aws",
+    "react",
+    "angular",
+    "cloudflare",
+    "stripe",
+    "shopify"
+  ],
+  "founded_year": null,
+  "headquarters": null,
+  "revenue_range": null,
+  "funding_total": null,
+  "funding_stage": null,
+  "employee_growth": null,
+  "key_people": [],
+  "competitors": [],
+  "recent_news": [],
+  "job_postings": [],
+  "tech_spend_estimate": "$10K-$50K/month",
+  "digital_maturity_score": 63,
+  "automation_opportunities": [
+    "CRM implementation for lead management",
+    "Marketing automation platform"
+  ],
+  "social_metrics": {},
+  "content_themes": [],
+  "engagement_rate": null,
+  "growth_signals": [],
+  "pain_indicators": [],
+  "trigger_events": [],
+  "enrichment_sources": [
+    "LinkedIn",
+    "NewsAPI"
+  ],
+  "confidence_scores": {
+    "company_info": 0.0,
+    "tech_stack": 0.7,
+    "market_intelligence": 0,
+    "overall": 0.2333333333333333
+  },
+  "last_updated": "2025-08-12T21:00:45.074496"
+}

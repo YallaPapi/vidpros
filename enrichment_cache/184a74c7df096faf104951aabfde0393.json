@@ -1,0 +1,48 @@
+{
+  "company_name": "Shopify",
+  "website": "https://www.shopify.com",
+  "industry": "E-commerce",
+  "company_size": "1000+ employees",
+  "tech_stack": [
+    "react",
+    "shopify",
+    "salesforce"
+  ],
+  "founded_year": null,
+  "headquarters": null,
+  "revenue_range": null,
+  "funding_total": null,
+  "funding_stage": null,
+  "employee_growth": null,
+  "key_people": [],
+  "competitors": [],
+  "recent_news": [],
+  "job_postings": [],
+  "tech_spend_estimate": "<$10K/month",
+  "digital_maturity_score": 52,
+  "automation_opportunities": [
+    "Marketing automation platform",
+    "Inventory management automation",
+    "Digital transformation consulting"
+  ],
+  "social_metrics": {},
+  "content_themes": [],
+  "engagement_rate": null,
+  "growth_signals": [],
+  "pain_indicators": [
+    "No cloud infrastructure detected",
+    "Limited technology adoption suggests manual processes"
+  ],
+  "trigger_events": [],
+  "enrichment_sources": [
+    "LinkedIn",
+    "NewsAPI"
+  ],
+  "confidence_scores": {
+    "company_info": 0.0,
+    "tech_stack": 0.3,
+    "market_intelligence": 0,
+    "overall": 0.09999999999999999
+  },
+  "last_updated": "2025-08-12T21:06:57.702499"
+}

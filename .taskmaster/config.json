@@ -1,0 +1,39 @@
+{
+  "models": {
+    "main": {
+      "provider": "anthropic",
+      "modelId": "claude-3-5-sonnet-20241022",
+      "maxTokens": 64000,
+      "temperature": 0.2
+    },
+    "research": {
+      "provider": "perplexity",
+      "modelId": "sonar-pro",
+      "maxTokens": 8700,
+      "temperature": 0.1
+    },
+    "fallback": {
+      "provider": "anthropic",
+      "modelId": "claude-3-5-sonnet-20241022",
+      "maxTokens": 64000,
+      "temperature": 0.2
+    }
+  },
+  "global": {
+    "logLevel": "info",
+    "debug": false,
+    "defaultNumTasks": 10,
+    "defaultSubtasks": 5,
+    "defaultPriority": "high",
+    "projectName": "VideoReach AI",
+    "responseLanguage": "English",
+    "defaultTag": "master"
+  },
+  "claudeCode": {},
+  "project": {
+    "name": "VideoReach AI",
+    "type": "AI Video Prospecting Platform",
+    "version": "1.0.0",
+    "status": "Planning/Development"
+  }
+}

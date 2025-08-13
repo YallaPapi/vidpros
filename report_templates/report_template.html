@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Assessment Report - {{ report.company_name }}</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 10px; margin-bottom: 30px; }
+        .summary-box { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #3498db; }
+        .metric { display: inline-block; margin: 10px 20px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .metric-value { font-size: 24px; font-weight: bold; color: #2c3e50; }
+        .metric-label { font-size: 12px; color: #7f8c8d; text-transform: uppercase; }
+        .chart-container { margin: 30px 0; text-align: center; }
+        .recommendations { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .recommendation-item { margin: 10px 0; padding-left: 20px; position: relative; }
+        .recommendation-item:before { content: "✓"; position: absolute; left: 0; color: #27ae60; font-weight: bold; }
+        .risk-item { color: #e74c3c; }
+        .success-item { color: #27ae60; }
+        .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #7f8c8d; }
+        @media print { body { max-width: 100%; } .header { background: #667eea; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Automation Assessment Report</h1>
+        <h2 style="color: white; border: none;">{{ report.company_name }}</h2>
+        <p>Report ID: {{ report.report_id }} | Generated: {{ report.generated_at.strftime('%B %d, %Y') }}</p>
+    </div>
+
+    <div class="summary-box">
+        <h2>Executive Summary</h2>
+        <p>{{ report.executive_summary }}</p>
+    </div>
+
+    <div class="metrics">
+        <div class="metric">
+            <div class="metric-value">${{ "{:,.0f}".format(report.total_savings_potential) }}</div>
+            <div class="metric-label">Annual Savings Potential</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">{{ report.payback_period_months }} months</div>
+            <div class="metric-label">Payback Period</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">{{ report.enriched_data.digital_maturity_score }}/100</div>
+            <div class="metric-label">Digital Maturity</div>
+        </div>
+    </div>
+
+    <h2>Key Findings</h2>
+    <ul>
+        {% for finding in report.key_findings %}
+        <li>{{ finding }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if report.charts.get('maturity_radar') %}
+    <div class="chart-container">
+        <h2>Digital Maturity Assessment</h2>
+        <img src="{{ report.charts['maturity_radar'] }}" alt="Digital Maturity Radar Chart" style="max-width: 100%;">
+    </div>
+    {% endif %}
+
+    <div class="recommendations">
+        <h2>Critical Recommendations</h2>
+        {% for rec in report.critical_recommendations %}
+        <div class="recommendation-item">{{ rec }}</div>
+        {% endfor %}
+    </div>
+
+    {% if report.charts.get('roi_timeline') %}
+    <div class="chart-container">
+        <h2>ROI Timeline</h2>
+        <img src="{{ report.charts['roi_timeline'] }}" alt="ROI Timeline" style="max-width: 100%;">
+    </div>
+    {% endif %}
+
+    <h2>Automation Opportunities</h2>
+    <ul>
+        {% for opp in report.enriched_data.automation_opportunities %}
+        <li>{{ opp }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if report.charts.get('impact_matrix') %}
+    <div class="chart-container">
+        <h2>Impact vs Effort Analysis</h2>
+        <img src="{{ report.charts['impact_matrix'] }}" alt="Impact Matrix" style="max-width: 100%;">
+    </div>
+    {% endif %}
+
+    <h2>Implementation Roadmap</h2>
+    
+    <h3>Immediate Actions (0-7 days)</h3>
+    <ul>
+        {% for action in report.immediate_actions %}
+        <li>{{ action }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>30-Day Plan</h3>
+    <ul>
+        {% for action in report.thirty_day_plan %}
+        <li>{{ action }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>90-Day Plan</h3>
+    <ul>
+        {% for action in report.ninety_day_plan %}
+        <li>{{ action }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Risk Assessment</h2>
+    <div style="display: flex; gap: 40px;">
+        <div style="flex: 1;">
+            <h3>Implementation Risks</h3>
+            <ul>
+                {% for risk in report.implementation_risks %}
+                <li class="risk-item">{{ risk }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div style="flex: 1;">
+            <h3>Success Factors</h3>
+            <ul>
+                {% for factor in report.success_factors %}
+                <li class="success-item">{{ factor }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 VideoReach AI - Confidential Automation Assessment</p>
+        <p>This report contains proprietary analysis and recommendations.</p>
+    </div>
+</body>
+</html>
